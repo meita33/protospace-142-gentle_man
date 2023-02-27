@@ -12,6 +12,14 @@ development:
 
 test:
   <<: *default
+  database: protospace_142_gentle_man_test
+
+
+production:
+  <<: *default
+  database: protospace_142_gentle_man_production
+  username: protospace_142_gentle_man
+  password: <%= ENV['PROTOSPACE_142_gentle_man_DATABASE_PASSWORD'] %>
   adapter: mysql2
   username: root
   password:
