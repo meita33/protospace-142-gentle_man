@@ -26,9 +26,12 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    @prototype = Prototype.find(parsms[:id])
   end
 
   def update
+    prototype = Prototype.find(parsms[:id])
+    prototype.update(prototype_params)
   end
 
   private
