@@ -38,6 +38,9 @@ class PrototypesController < ApplicationController
     else
       render :edit
     end
+
+    prototype = Prototype.find(params[:id])
+    prototype.update(prototype_params)
   end
 
   private
