@@ -20,7 +20,7 @@ production:
   database: protospace_142_gentle_man_production
   username: protospace_142_gentle_man
   password: <%= ENV['PROTOSPACE_142_gentle_man_DATABASE_PASSWORD'] %>
-  adapter: mysql2
+  adapter: postgresql
   username: root
   password:
   host: localhost
