@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit, :delete]
 
   def index 
     @prototypes = Prototype.all
@@ -38,10 +39,8 @@ class PrototypesController < ApplicationController
     else
       render :edit
     end
-
-    prototype = Prototype.find(params[:id])
-    prototype.update(prototype_params)
   end
+
   def destroy
     prototype = Prototype.find(params[:id])
     prototype.destroy
