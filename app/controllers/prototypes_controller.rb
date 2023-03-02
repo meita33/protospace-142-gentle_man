@@ -4,14 +4,10 @@ class PrototypesController < ApplicationController
   
   def index 
     @prototypes = Prototype.all
-    # @prototype = User.new[:name] 
-    # Prototype.includes(:user).order("created_at DESC")
-    
   end
 
   def new
     @prototype = Prototype.new
-
   end
 
   def create
@@ -25,7 +21,7 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
-    
+    @comment = Comment.new
   end
 
   def edit
