@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user!, only: [:new, :edit, :delete]
-
+  
   def index 
     @prototypes = Prototype.all
     # @prototype = User.new[:name] 
@@ -25,6 +25,7 @@ class PrototypesController < ApplicationController
 
   def show
     @prototype = Prototype.find(params[:id])
+    
   end
 
   def edit
